@@ -1,0 +1,18 @@
+from django.db import models
+from utils.models import Timestamp
+
+class WaitlistEntry(Timestamp, models.Model):
+    fname = models.CharField(max_length=100)
+    lname = models.CharField(max_length=100)
+    email = models.EmailField(
+        verbose_name='email address',
+        max_length=255,
+        unique=True,
+    )
+    notes = models.TextField()
+
+    def __str__(self):
+        return self.fname.lower()+'_'+self.lname.lower()
+
+    class Meta:
+        verbose_name_plural = 'Waitlist entries'

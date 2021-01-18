@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users',
     'certificates',
     'utils',
+    'waitlists',
 ]
 
 MIDDLEWARE = [
