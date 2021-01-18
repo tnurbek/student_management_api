@@ -2,8 +2,8 @@ from django.db import models
 from utils.models import Timestamp
 
 class WaitlistEntry(Timestamp, models.Model):
-    fname = models.CharField(max_length=100)
-    lname = models.CharField(max_length=100)
+    fname = models.CharField(max_length=100, verbose_name='first name')
+    lname = models.CharField(max_length=100, verbose_name='last name')
     email = models.EmailField(
         verbose_name='email address',
         max_length=255,
